@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+.bar {
+  fill: steelblue;
+}
+
+.bar:hover {
+  fill: brown;
+}
+
+.axis--x path {
+  display: none;
+}
+
+</style>
+<div id="png-container"></div>
+<button onclick="glitchD3()">Glitch</button>
+<button onclick="reset()">Reset</button>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="../src/glitch-d3.js"></script>
+<script src="../js/glitch-canvas.js"></script>
+<script>
+
+// TODO
+// [ ] Function to create chart with data params
+// [ ] https://github.com/snorpey/glitch-canvas
+
+// Original http://bl.ocks.org/mbostock/3885304
+var margin = {top: 20, right: 20, bottom: 30, left: 40},
+    width = 400,
+    height = 300;
+
+var x = d3.scaleBand().rangeRound([0, width - margin.left - margin.right]).padding(0.1),
+    y = d3.scaleLinear().rangeRound([height - margin.top - margin.bottom, margin.top]);
+
+d3.tsv("letters.tsv", function(d) {
+  d.frequency = +d.frequency;
+  return d;
+}, function(error, data) {
+  if (error) throw error;
+
+//  print_step("body", "Normal");
+  draw_chart(data, function(n) {
+
+    n.selectAll('rect')
+      .style("fill", function(d, i) {
+        if(typeof d3.select(this).node().__original_fill__ === "undefined") {
+          d3.select(this).node().__original_fill__ = d3.select(this).attr("fill");
+        }
+        return fill.range()[Math.floor(fill.range().length * Math.random())];
+      });
+
+  });
+
+  draw_chart(data.map(function(d) {
+    d.frequency = Math.random() * d.frequency;
+    return d;
+  }), function(n) {
+
+    n.selectAll('rect')
+      .attr('height', function(d, i) {
+        if(typeof d3.select(this).node().__original_height__ === "undefined") {
+          d3.select(this).node().__original_height__ = d3.select(this).attr("height");
+        }
+        return d3.select(this).node().__original_height__ * Math.random();
+      });
+
+  });
+
+  draw_chart(data.map(function(d) {
+    d.frequency = Math.random() * d.frequency;
+    return d;
+  }), function(n) {
+
+    n.selectAll('rect')
+      .attr('width', function(d, i) {
+        if(typeof d3.select(this).node().__original_width__ === "undefined") {
+          d3.select(this).node().__original_width__ = d3.select(this).attr("width");
+        }
+        return d3.select(this).node().__original_width__ * Math.random();
+      });
+
+  });
+
+  svg_2_canvas('svg', 'canvas-id', glitchCanvas);
+
+  glitchCanvas();
+
+});
+
+function print_step(el, msg) {
+  d3.select(el).append("h1").text(msg);
+}
+
+</script>
