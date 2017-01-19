@@ -8,9 +8,10 @@ function get_title($url){
   }
 }
 ?>
-<?php $links=array(
-"glitches/1.php"
-)
+<?php $links=scandir("glitches"
+);
+$links=array_diff($links, array('.', '..'));
+
  ?>
 <head>
 <script src="https://code.jquery.com/jquery-1.11.3.js">
@@ -23,7 +24,7 @@ function get_title($url){
 		<ul>
 
 <?php foreach ($links as &$link) : ?>
-<li><a target="_blank" href="<?php echo $link ?>"><?php echo get_title($link)?>
+<li><a target="_blank" href="glitches/<?php echo $link ?>"><?php echo get_title("glitches/".$link)?>
 </a></li>
 <?php endforeach; 
 unset($link);
@@ -33,7 +34,7 @@ unset($link);
 </body>
 <script>
 	$("a").click(function(){
-	$(this).attr("href", $(this).attr("href") +"?pic=" + parent.$("#opic").attr("selected_pic"));
+	$(this).attr("href", $(this).attr("href").split("?pic=")[0] +"?pic=" + parent.$("#opic").attr("selected_pic"));
 }
 );
 </script>
