@@ -34,7 +34,7 @@ unset($link);
 </body>
 <script>
 	$("a").click(function(){
-	$(this).attr("href", $(this).attr("href").split("?pic=")[0] +"?pic=" + parent.$("#opic").attr("selected_pic"));
+	$(this).attr("href", $(this).attr("href").split("?pic=")[0] +"?pic=" + parent.$("#opic").attr("selected_pic")+"&bburl="+parent.$("#obbuilder").attr("bburl"));
 }
 );
 </script>
