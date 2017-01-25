@@ -23,6 +23,7 @@ margin:10px;
 <?php
 if($_GET["bburl"]!="null"){
 	exec("git clone https://gist.github.com/". split("[/]",$_GET["bburl"])[1].".git /var/www/html/Glitches-Dataviz/git/".split("[/]",$_GET["bburl"])[1]."/");
+	echo "t";
 }
 ?>
 <script>

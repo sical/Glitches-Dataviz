@@ -39,9 +39,14 @@ $("img").click(function(){
 				$(this).attr("class","");
 
 				});
-		$(this).attr("class","selected-pic");
-		parent.$("#opic").attr("selected_pic",$(this).attr("id"));
-		});
+		if(parent.$("#opic").attr("selected_pic")!=$(this).attr("id")){
+			$(this).attr("class","selected-pic");
+			parent.$("#opic").attr("selected_pic",$(this).attr("id"));
+		}else{
+			$(this).attr("class","");
+			parent.$("#opic").attr("selected_pic","null");
+		}
+	});
 </script>
 <style>
 img {
