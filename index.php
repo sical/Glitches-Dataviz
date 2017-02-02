@@ -9,8 +9,6 @@
 </head>
 <body>
 <div class="se-pre-con"></div>
-<div id="glitches"></div>
-<div id="links"></div>
 <div id="upload"><h2>Upload</h2>
  <?php
       if( !empty($message) ) 
@@ -31,6 +29,8 @@
 </div>
 <div id="selecPic"></div>
 <div id="blockbuilder"></div>
+<div id="glitches"></div>
+<div id="links">links</div>
 <script >
 $("#opic").ready(function(){
 });
@@ -38,6 +38,16 @@ $("#opic").ready(function(){
 </body>
 <script >
 $("#links").html('<object id="olink" type="text/html" class="divs" data="links.php">');
+$("#olink").hide();
+
+$('#olink').hover(
+  function () {
+    $(this).show();
+  }, 
+  function () {
+    $(this).hide();
+  }
+);
 $("#glitches").html('<object id="oglitches" type="text/html" class="divs" data="glitches.php">');
 $("#selecPic").html('<object id="opic" name="opic" type="text/html" class=divs selected_pic="null" data="selecPic.php">');
 $("#blockbuilder").html('<object id="obbuilder" name="obbuilder" type="text/html" class="divs" bburl="null" data="bbuilder.php">');
@@ -54,6 +64,9 @@ $('#upForm').on('submit', function(){
 });
 </script>
 <style>
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
 .divs {
 	margin:10px;
 	width:15%;
