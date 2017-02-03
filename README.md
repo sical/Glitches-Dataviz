@@ -10,3 +10,4 @@ interesting links :
 - http://tumblr.glitchartistscollective.com/
 - http://poxparty.com/
 - http://glitch.refrag.paris/
+- http://www.miragefestival.com/type-evenements/workshops/
