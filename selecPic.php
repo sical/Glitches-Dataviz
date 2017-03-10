@@ -14,6 +14,8 @@ function get_title($url){
 $pics=array_diff($pics, array('.', '..'));
 ?>
 <head>
+   <link rel="stylesheet" type="text/css" href="style/general.css">
+
 <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
 <base target="_parent" />
 </head>

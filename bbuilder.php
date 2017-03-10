@@ -1,5 +1,7 @@
 <head>
-<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.3.js"></script>   
+<link rel="stylesheet" type="text/css" href="style/general.css">
+
 
 <base target="_parent" />
 </head>
@@ -14,10 +16,10 @@ http://blockbuilder.org/
 <script>
 var bburl="";
 $( "#url" ).change(function() {
-	bburl=$("#url").val();
-	parent.$("#obbuilder").attr("bburl",bburl);
+		bburl=$("#url").val();
+		parent.$("#obbuilder").attr("bburl",bburl);
 
-});
+		});
 
 </script>
 

@@ -26,11 +26,12 @@
 </form>
 
  
-</div>
-<div id="selecPic"></div>
 <div id="blockbuilder"></div>
 <div id="glitches"></div>
+</div>
+<div id="selecPic"></div>
 <div id="links">links</div>
+<div id="preview"></div>
 <script >
 $("#opic").ready(function(){
 });
@@ -48,9 +49,10 @@ $('#olink').hover(
     $(this).hide();
   }
 );
-$("#glitches").html('<object id="oglitches" type="text/html" class="divs" data="glitches.php">');
+$("#preview").html('<object id="opreview" type="text/html" class="prev-div" data="">');
+$("#glitches").html('<object id="oglitches" type="text/html" class="" data="glitches.php">');
 $("#selecPic").html('<object id="opic" name="opic" type="text/html" class=divs selected_pic="null" data="selecPic.php">');
-$("#blockbuilder").html('<object id="obbuilder" name="obbuilder" type="text/html" class="divs" bburl="null" data="bbuilder.php">');
+$("#blockbuilder").html('<object id="obbuilder" name="obbuilder" type="text/html" class="" bburl="null" data="bbuilder.php">');
 
 
 
@@ -64,8 +66,29 @@ $('#upForm').on('submit', function(){
 });
 </script>
 <style>
+#preview { width: 710px; height: 1420px; padding: 0; overflow: hidden; }
+#opreview { width: 1000px; height: 2000px; border: 0px; }
+#opreview {
+    zoom: 0.71;
+    -moz-transform: scale(0.71);
+    -moz-transform-origin: 0 0;
+    -o-transform: scale(0.71);
+    -o-transform-origin: 0 0;
+    -webkit-transform: scale(0.71);
+    -webkit-transform-origin: 0 0;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+ #opreview  { zoom: 1;  }
+}
 body{
     font-family: Arial, Helvetica, sans-serif;
+}
+.prev-div {
+	margin:10px;
+	width:29%;
+	float:left;
+	height:100%;
 }
 .divs {
 	margin:10px;

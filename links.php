@@ -20,6 +20,7 @@ function get_title($url){
 )
  ?>
 <head>
+   <link rel="stylesheet" type="text/css" href="style/general.css">
 <base target="_parent" />
 </head>
 
