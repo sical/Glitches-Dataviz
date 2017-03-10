@@ -10,7 +10,7 @@
 <body>
 <div class="marged-div">
 <button onclick="glitchzalgo('text')">Glitch</button>
-<iframe  type="text/html" id="oblock" src="../git/3310560/"></iframe>
+<iframe  type="text/html" id="oblock" src="../repgit/3310560/"></iframe>
 </div>
 </body>
 </html>

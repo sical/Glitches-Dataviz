@@ -22,7 +22,7 @@ margin:10px;
 </style>
 <?php
 if($_GET["bburl"]!="null"){
-	exec("git clone https://gist.github.com/". split("[/]",$_GET["bburl"])[1].".git /var/www/html/Glitches-Dataviz/git/".split("[/]",$_GET["bburl"])[1]."/");
+	exec("git clone https://gist.github.com/". split("[/]",$_GET["bburl"])[1].".git /var/www/html/Glitches-Dataviz/repgit/".split("[/]",$_GET["bburl"])[1]."/");
 	echo "t";
 }
 ?>
@@ -40,7 +40,7 @@ if("<?php echo $_GET["pic"]?>"!="null"){
 	img.src = "../uploads/<?php echo $_GET["pic"]?>";
 }
 else if("<?php echo $_GET["bburl"]?>"!="null"){
-	$("#oblock").attr("src","../git/<?php echo split("[/]",$_GET["bburl"])[1]?>/");
+	$("#oblock").attr("src","../repgit/<?php echo split("[/]",$_GET["bburl"])[1]?>/");
 	$("#oblock").attr("style","width:100%;height:100%;zoom:0.5;");
 
 }
